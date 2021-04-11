@@ -1,0 +1,21 @@
+<div class="mini-weather-item-inner-container" *ngIf="forecast">
+
+  <div class="mini-weather-info-container layout-wrap-space-between">
+    <p class="mini-weather-title info"> {{convertDate(forecast.dt) | date: 'dd/MM' }}</p>
+    <div class="light-txt">
+    <p> {{ 'Max ' + roundTemp(forecast.main.temp_max) + ' '+ (this.isMetric? 'C' : 'F') }}</p>
+    <p> {{ 'Min ' + roundTemp(forecast.main.temp_min) + ' '+ (this.isMetric? 'C' : 'F') }}</p>
+    </div>
+  </div>
+
+    <div class="double-flex-container layout-wrap-space-between">
+      <div class="flex-item">
+        <p class="mini-weather-title"> Day</p>
+        <mat-icon class="icon" svgIcon="{{getWeatherIcon(forecast?.weather[0]?.icon)}}"> </mat-icon>
+        <p class="light-txt">{{forecast?.weather[0]?.main}}</p>
+      </div>
+    </div>
+
+
+</div>
+

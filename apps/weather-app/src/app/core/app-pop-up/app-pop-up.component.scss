@@ -1,0 +1,54 @@
+@import './libs/themes/common-theme';
+@import './libs/themes/global-styles';
+
+:host {
+  overflow: hidden !important;
+}
+
+.dialog-hr {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.mat-dialog-title {
+  display: block;
+  margin-top: -4px;
+  margin-bottom: 6px;
+}
+
+.mat-dialog-content {
+  //white-space: pre;
+  white-space: pre-line;
+  min-height: 100px;
+  padding: 24px !important;
+}
+
+.form-hr {
+  margin-left: -24px;
+  margin-right: -24px;
+}
+
+.dialog-content {
+  padding-top: 25px;
+  min-height: 100px !important;
+}
+
+.icon-cancel-btn {
+  float: right;
+  margin-top: -10px;
+  margin-right: -16px;
+}
+
+.WARNING {
+  color: #ffdd62;
+}
+
+.btn-container {
+  margin-right: -16px;
+}
+
+.title-icon {
+  vertical-align: middle;
+  height: 26px;
+  width: 26px;
+}

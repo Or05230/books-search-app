@@ -1,0 +1,88 @@
+@import 'common-theme';
+
+.no-outline-btn {
+  outline: none !important;
+}
+
+.app-card{
+  height: 100%;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: none;
+  border: 1px solid map-get($app-foreground, border);
+}
+
+.scroll{
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+p{
+  color: map-get($app-foreground, secondary-text);
+}
+
+label{
+  color: map-get($app-foreground, secondary-text);
+}
+
+.light-txt{
+  font-weight: 300;
+}
+
+.icon{
+color: map-get($app-foreground, secondary-text);
+  user-select: none;
+}
+
+.layout-wrap-space-between{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.layout-row-space-between{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.layout-wrap-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.layout-row{
+  display: flex;
+  flex-direction: row;
+  grid-gap: 10px;
+}
+
+.app-pointer{
+  cursor: pointer;
+  &:hover{
+    color: map-get($app-foreground,app-pointer-hover);
+  }
+}
+
+.hover-underline{
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.spinner-overlay-backdrop {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.dialog-open {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.pop-up-hr{
+  border: none;
+  background-color: map-get($app-foreground, border);
+  height: 1px;
+  margin-right: -25px;
+  margin-left: -25px;
+}

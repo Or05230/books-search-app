@@ -1,0 +1,22 @@
+@import './libs/themes/common-theme';
+@import './libs/themes/global-styles';
+
+
+.search-inner-container{
+  padding: 15px;
+  border-radius: 8px;
+  border-radius: 8px;
+  border: 1px solid map-get($app-foreground, border);
+
+  .address-form-field{
+    width: 100%;
+  }
+
+  .search-actions{
+    grid-gap: 15px;
+
+    .search-action-btn{
+      flex: 1 1 200px;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<div>
+  <button *ngIf="data.popUpData.title_exit_icon" mat-icon-button [mat-dialog-close] class="no-outline-btn icon-cancel-btn">
+    <mat-icon>{{ data.popUpData.title_exit_icon }}</mat-icon>
+  </button>
+
+  <p mat-dialog-title class="dialog-title">
+    <mat-icon *ngIf="data.popUpData.title_icon" [ngClass]="data.popUpData.title_icon_class + ' title-icon'">{{ data.popUpData.title_icon }}</mat-icon>
+    {{ data.popUpData.title }}</p
+  >
+
+  <hr class="pop-up-hr" />
+
+  <mat-dialog-content class="app-dialog-content hold">
+    <p>
+      {{
+        (data.popUpData.line_before_main_data ? data.popUpData.line_before_main_data : '') +
+          (data.content ? data.content : '') +
+          (data.popUpData.line_after_main_data ? data.popUpData.line_after_main_data : '')
+      }}
+    </p>
+  </mat-dialog-content>
+
+  <hr class="pop-up-hr" />
+
+  <mat-dialog-actions align="end">
+    <div class="btn-container">
+      <button *ngIf="data.popUpData.cancel_button" [mat-dialog-close]="false" class="no-outline-btn" mat-stroked-button>
+        {{ data.popUpData.cancel_button }}
+      </button>
+
+      <button *ngIf="data.popUpData.ok_button" [mat-dialog-close]="true" class="no-outline-btn" color="primary" mat-flat-button>
+        {{ data.popUpData.ok_button }}
+      </button>
+    </div>
+  </mat-dialog-actions>
+</div>

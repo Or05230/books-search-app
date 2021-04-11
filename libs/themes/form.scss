@@ -1,0 +1,132 @@
+@import 'common-theme';
+
+@mixin weather-app-form {
+  .form-card {
+    margin: 20px;
+    padding: 0;
+  }
+
+  .form-title {
+    height: 60px;
+    margin-bottom: 0;
+    margin-left: 2px;
+    font-size: 18px;
+    position: relative;
+    font-weight: 400;
+  }
+
+  .form-title-text {
+    padding-top: 14px;
+
+    span {
+      color: map-get($app-primary, 500);
+    }
+  }
+
+  .content-form-group {
+    margin: 20px;
+  }
+
+  .form-nav-icon {
+    font-size: 20px !important;
+    line-height: 16px;
+    height: 20px;
+    width: 20px;
+  }
+
+  .form-subtitle {
+    font-weight: 300;
+    font-size: 20px;
+    margin-left: 7px;
+  }
+
+  .form-edit-icon {
+    line-height: 16px !important;
+  }
+
+  .form-deactivate-btn {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    border: solid 1px map-get($app-warn, 500);
+  }
+
+  .form-reactivate-btn {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    border: solid 1px map-get($app-background, reactivate-button);
+    color: map-get($app-background, reactivate-button);
+  }
+
+  .form-hr {
+    border: none;
+    background-color: map-get($app-foreground, border);
+    height: 1px;
+    margin: 0;
+  }
+
+  .form-row-title {
+    margin-bottom: 5px;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .form-add-btn {
+    float: right;
+    margin-top: -24px;
+    padding-right: 0;
+  }
+
+  .form-action-btn {
+    margin-right: 20px;
+    padding-top: 10px;
+  }
+
+  .form-col-title {
+    width: 200px;
+    max-width: 200px;
+    padding-left: 8px;
+    font-weight: bold;
+    letter-spacing: -0.15px;
+    font-size: 16px;
+  }
+
+  .form-card-action {
+    height: 75px;
+  }
+
+  .form-cancel-btn {
+    margin-right: 20px !important;
+    color: map-get($app-foreground, secondary-btn-txt);
+  }
+
+  ::ng-deep .mat-ink-bar {
+    height: 3px !important;
+  }
+
+  .form-tab {
+    margin: 50px 20px 20px 20px;
+  }
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: map-get($app-foreground, form-field-border);
+  }
+
+  .form-group {
+    margin: 20px;
+  }
+
+  mat-form-field {
+    margin-bottom: 12px;
+    padding: 0 13px !important;
+  }
+
+  .large-form-field {
+    width: 500px;
+  }
+
+  .medium-form-field {
+    width: 400px;
+  }
+}

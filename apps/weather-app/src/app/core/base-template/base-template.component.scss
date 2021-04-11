@@ -1,0 +1,50 @@
+@import 'libs/themes/common-theme';
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+
+  mat-toolbar {
+    height: 64px;
+    background-color: white;
+    border-bottom: 1px solid map-get($app-foreground, border);
+    justify-content: space-between;
+    padding: 1rem;
+
+    .logo {
+      margin-left: 12px;
+      user-select: none;
+    }
+
+    .action{
+      margin: 10px;
+    }
+
+    .unit-change{
+      font-size: 15px;
+    }
+
+  }
+
+  .main-app-container{
+    height: 100%;
+    padding: 15px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+  }
+
+}
+
+.copyright{
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: map-get($app-foreground, secondary-text);
+}

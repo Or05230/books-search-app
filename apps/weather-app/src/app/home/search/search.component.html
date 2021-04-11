@@ -1,0 +1,34 @@
+<div class="search-inner-container">
+<form [formGroup]="weatherForm">
+  <div  formArrayName="cities">
+    <div *ngFor="let isLast = last; let city; of: weatherForm.get('cities')['controls']; let i = index">
+      <mat-form-field appearance="fill" class="address-form-field">
+        <input
+          placeholder="Search for city"
+          [formControlName]="i"
+          matInput
+          (keyup.enter)="onSearchClick(i, city)"
+          onkeypress="return (event.charCode >= 65 && event.charCode <= 90)
+                                     || (event.charCode >= 97 && event.charCode <= 122)
+                                     || event.charCode === 45 || event.charCode === 39 || event.charCode === 96 || event.charCode === 44
+                                     || event.charCode === 46
+                                     || event.charCode === 32"
+        />
+      </mat-form-field>
+      <div class="search-actions layout-wrap-space-between">
+        <button [disabled]="!weatherForm.get('cities')['controls'][i]?.value?.length" (click)="onSearchClick(i, city)" class="search-action-btn" mat-flat-button color="primary">
+          Search
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+      <br>
+        <weather-app-mini-weather-item *ngIf="citiesForecasts[i]?.name" [forecast]="citiesForecasts[i]"> </weather-app-mini-weather-item>
+      <br>
+    </div>
+  </div>
+
+</form>
+
+
+</div>
+
