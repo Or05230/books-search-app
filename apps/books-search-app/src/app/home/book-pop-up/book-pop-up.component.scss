@@ -1,0 +1,125 @@
+@import './libs/themes/common-theme';
+@import './libs/themes/global-styles';
+
+
+
+
+
+:host {
+  overflow: hidden !important;
+}
+
+.dialog-hr {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.mat-dialog-title {
+  display: block;
+  margin-top: -4px;
+  margin-bottom: 6px;
+
+}
+
+.mat-dialog-content {
+  //white-space: pre;
+  white-space: pre-line;
+  min-height: 100px;
+  padding: 24px !important;
+
+
+  .book-info {
+    display: flex;
+
+  }
+}
+
+.custom-hr {
+  margin-left: -24px;
+  margin-right: -24px;
+}
+
+.dialog-content {
+  padding-top: 25px;
+  min-height: 100px !important;
+}
+
+.icon-cancel-btn {
+  float: right;
+  margin-top: -10px;
+  margin-right: -16px;
+
+}
+
+.WARNING {
+  color: #ffdd62;
+}
+
+.btn-container {
+  margin-right: -16px;
+}
+
+.center-btn {
+  margin-right: 210px;
+
+  mat-icon {
+    color: red;
+  }
+}
+
+.title-icon {
+  vertical-align: middle;
+  height: 26px;
+  width: 26px;
+}
+
+textarea {
+  width: 100%;
+}
+
+
+.upload-container {
+  width: 100%;
+}
+
+.innerContainer {
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  border: dashed 2px map-get($app-foreground, border);
+  padding: 15px;
+  cursor: pointer;
+  &:hover {
+    //border: dashed 2px map-get($app-primary, 500);
+  }
+}
+
+
+.files-container {
+  width: 570px;
+  .file {
+    display: flex;
+    width: fit-content;
+    min-width: 300px;
+    border: 1px solid map-get($app-foreground, border);
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+
+    .file-delete-icon {
+      font-size: 18px;
+      height: 19px;
+      width: 22px;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+
+    .file-label {
+      font-size: 13px;
+    }
+  }
+}
+
+::ng-deep .mat-button-focus-overlay {
+  background-color: transparent !important;
+}

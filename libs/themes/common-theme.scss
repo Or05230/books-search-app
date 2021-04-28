@@ -9,10 +9,12 @@ $app-foreground: (
   //app-pointer-hover: #373737,
   app-pointer-hover: #3f51b5,
   border: #dadce0,
+  table-row: rgba(242, 243, 245)
 );
 
 $app-theme: (
   foreground: $app-foreground,
   background: $app-background
 );
+
 

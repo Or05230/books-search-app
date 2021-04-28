@@ -1,0 +1,21 @@
+<div class="main-container">
+  <div *ngFor="let book of ( favBooksList| async)">
+    <mat-card>
+      <mat-card-title-group>
+        <img *ngIf="book.volumeInfo?.imageLinks?.smallThumbnail" [src]="book.volumeInfo?.imageLinks?.smallThumbnail" />
+        <mat-card-title>{{ book.volumeInfo?.title }}</mat-card-title>
+      </mat-card-title-group>
+      <mat-card-content>
+        <p *ngIf="book.volumeInfo?.description">{{ book.volumeInfo.description }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="no-favs-msg" *ngIf="(favBooksList | async).length === 0">Oh Oh.
+    <br>
+    Seems like you don't have favorites yet.
+    Please search for books and add them as favorite to see some magic happens.
+  </div>
+
+
+</div>

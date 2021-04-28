@@ -1,39 +1,39 @@
 {
   "version": 1,
   "projects": {
-    "weather-app": {
+    "books-search-app": {
       "projectType": "application",
       "schematics": {
         "@nrwl/angular:component": {
           "style": "scss"
         }
       },
-      "root": "apps/weather-app",
-      "sourceRoot": "apps/weather-app/src",
-      "prefix": "weather-app",
+      "root": "apps/books-search-app",
+      "sourceRoot": "apps/books-search-app/src",
+      "prefix": "books-search-app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/weather-app",
-            "index": "apps/weather-app/src/index.html",
-            "main": "apps/weather-app/src/main.ts",
-            "polyfills": "apps/weather-app/src/polyfills.ts",
-            "tsConfig": "apps/weather-app/tsconfig.app.json",
+            "outputPath": "dist/apps/books-search-app",
+            "index": "apps/books-search-app/src/index.html",
+            "main": "apps/books-search-app/src/main.ts",
+            "polyfills": "apps/books-search-app/src/polyfills.ts",
+            "tsConfig": "apps/books-search-app/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/weather-app/src/favicon.ico",
-              "apps/weather-app/src/assets"
+              "apps/books-search-app/src/favicon.ico",
+              "apps/books-search-app/src/assets"
             ],
-            "styles": ["apps/weather-app/src/styles.scss"],
+            "styles": ["apps/books-search-app/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/weather-app/src/environments/environment.ts",
-                  "with": "apps/weather-app/src/environments/environment.prod.ts"
+                  "replace": "apps/books-search-app/src/environments/environment.ts",
+                  "with": "apps/books-search-app/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -62,64 +62,64 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "weather-app:build"
+            "browserTarget": "books-search-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "weather-app:build:production"
+              "browserTarget": "books-search-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "weather-app:build"
+            "browserTarget": "books-search-app:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/weather-app/tsconfig.app.json",
-              "apps/weather-app/tsconfig.spec.json"
+              "apps/books-search-app/tsconfig.app.json",
+              "apps/books-search-app/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/weather-app/**/*"]
+            "exclude": ["**/node_modules/**", "!apps/books-search-app/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/weather-app/jest.config.js",
-            "tsConfig": "apps/weather-app/tsconfig.spec.json",
+            "jestConfig": "apps/books-search-app/jest.config.js",
+            "tsConfig": "apps/books-search-app/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "apps/weather-app/src/test-setup.ts"
+            "setupFile": "apps/books-search-app/src/test-setup.ts"
           }
         }
       }
     },
-    "weather-app-e2e": {
-      "root": "apps/weather-app-e2e",
-      "sourceRoot": "apps/weather-app-e2e/src",
+    "books-search-app-e2e": {
+      "root": "apps/books-search-app-e2e",
+      "sourceRoot": "apps/books-search-app-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/weather-app-e2e/cypress.json",
-            "tsConfig": "apps/weather-app-e2e/tsconfig.e2e.json",
-            "devServerTarget": "weather-app:serve"
+            "cypressConfig": "apps/books-search-app-e2e/cypress.json",
+            "tsConfig": "apps/books-search-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "books-search-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "weather-app:serve:production"
+              "devServerTarget": "books-search-app:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/weather-app-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/weather-app-e2e/**/*"]
+            "tsConfig": ["apps/books-search-app-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/books-search-app-e2e/**/*"]
           }
         }
       }
@@ -171,5 +171,5 @@
       "unitTestRunner": "jest"
     }
   },
-  "defaultProject": "weather-app"
+  "defaultProject": "books-search-app"
 }

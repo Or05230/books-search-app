@@ -1,0 +1,19 @@
+
+<div class="login-page-container">
+  <label class="login-page-title">
+    Login
+  </label>
+  <form [formGroup]="loginForm" >
+    <p>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Username" formControlName="username">
+        <mat-hint>Accepted username: or</mat-hint>
+          <mat-error> {{ getErrorMessage(loginForm.get('username')) }} </mat-error>
+      </mat-form-field>
+    </p>
+  </form>
+
+  <div class="login-page-action-container">
+    <button (click)="submit()" [disabled]="!loginForm.valid" class="login-page-action" mat-flat-button color="primary">Login</button>
+  </div>
+</div>

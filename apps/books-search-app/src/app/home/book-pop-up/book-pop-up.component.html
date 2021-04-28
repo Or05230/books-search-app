@@ -1,0 +1,33 @@
+<div>
+  <button *ngIf="data?.title_exit_icon" mat-icon-button [mat-dialog-close] class="no-outline-btn icon-cancel-btn">
+    <mat-icon>{{ data?.title_exit_icon }}</mat-icon>
+  </button>
+
+  <span mat-dialog-title class="dialog-title">
+    {{ data?.title? data.title: data.popUpData.volumeInfo.title }}</span>
+
+  <hr class="custom-hr" />
+
+  <mat-dialog-content class="app-dialog-content hold">
+    <mat-card>
+      <mat-card-title-group>
+        <img *ngIf="data.popUpData.volumeInfo?.imageLinks?.smallThumbnail"  height="100"  width="100" [src]="data.popUpData.volumeInfo?.imageLinks?.smallThumbnail" />
+        <mat-card-title>{{ data.popUpData.volumeInfo.authors }}</mat-card-title>
+        <mat-card-subtitle *ngIf="data.popUpData.volumeInfo?.description">{{ data.popUpData.volumeInfo?.description }}</mat-card-subtitle>
+      </mat-card-title-group>
+      <mat-card-content>
+        <p *ngIf="data.popUpData.volumeInfo?.pageCount">Pages: {{data.popUpData.volumeInfo.pageCount}}</p>
+      </mat-card-content>
+    </mat-card>
+
+  </mat-dialog-content>
+
+  <hr class="custom-hr" />
+
+  <mat-dialog-actions align="end">
+    <div class="btn-container">
+      <button class="center-btn" [matTooltip]="isFav? 'Remove from favorites': 'Add to favorites'" (click)="onRemoveOrAddBookToFav(data.popUpData)" mat-icon-button> <mat-icon >{{isFav? 'favorite' : 'favorite_border'}}</mat-icon></button>
+
+    </div>
+  </mat-dialog-actions>
+</div>

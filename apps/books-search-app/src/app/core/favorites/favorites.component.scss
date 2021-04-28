@@ -1,0 +1,59 @@
+@import './libs/themes/common-theme';
+@import './libs/themes/global-styles';
+
+.main-container {
+  max-width: 50%;
+  margin: 0 auto;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow-y: auto;
+  align-items: center;
+
+
+  mat-card {
+    height: auto;
+    margin: 15px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+  }
+
+  mat-card:hover {
+    box-shadow: 3px 3px 16px -2px rgba(0, 0, 0, 0.5);
+  }
+  mat-card-title {
+    margin-right: 10px;
+  }
+  mat-card-title-group {
+    margin: 0;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  img {
+    width: 60px;
+    min-width: 60px;
+    margin-left: 5px;
+  }
+  mat-card-content {
+    margin-top: 15px;
+    margin: 15px 0 0;
+  }
+  span {
+    display: inline-block;
+    font-size: 13px;
+  }
+  mat-card-footer {
+    padding: 0 25px 25px;
+  }
+
+  .no-favs-msg {
+    text-align: center;
+    border: 0.5px solid grey;
+    padding: 10px;
+    border-radius: 5px;
+    justify-content: center;
+  }
+}

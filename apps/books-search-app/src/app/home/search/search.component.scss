@@ -1,0 +1,45 @@
+@import './libs/themes/table';
+@import './libs/themes/common-theme';
+@import './libs/themes/global-styles';
+
+.search-container {
+  display: inline-flex;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 45px;
+}
+
+.search-icon {
+  padding: 10px;
+  background-color: #f1f3f4;
+
+  .mat-icon {
+    color: #6f6f70;
+  }
+}
+
+.clear-icon {
+  padding: 10px;
+  background-color: #f1f3f4;
+}
+
+.search-box {
+  border: 0;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  flex: 1;
+  background-color: #f1f3f4;
+}
+
+input {
+  font-family: Roboto;
+  font-size: 14px;
+  color: #6f6f70;
+  font-weight: 300;
+  text-align: left;
+
+  &:focus {
+    outline: none;
+    text-align: left;
+  }
+}

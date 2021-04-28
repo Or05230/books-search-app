@@ -1,5 +1,5 @@
 {
-  "npmScope": "weather-app",
+  "npmScope": "books-search-app",
   "affected": {
     "defaultBase": "master"
   },
@@ -22,12 +22,12 @@
     }
   },
   "projects": {
-    "weather-app": {
+    "books-search-app": {
       "tags": []
     },
-    "weather-app-e2e": {
+    "books-search-app-e2e": {
       "tags": [],
-      "implicitDependencies": ["weather-app"]
+      "implicitDependencies": ["books-search-app"]
     }
   }
 }

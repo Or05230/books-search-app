@@ -1,0 +1,36 @@
+<div *ngIf="dataSource.loading$ | async" class="spinner-container">
+  <mat-spinner></mat-spinner>
+</div>
+
+<mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="No">
+    <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+    <mat-cell *matCellDef="let i = index">{{ paginator.pageIndex * paginator.pageSize + i + 1 }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Title">
+    <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <span [matTooltip]="element.volumeInfo.title.length > bookTitleMaxLength ? element.volumeInfo.title: ''">
+        {{element.volumeInfo.title | ellipsis}}
+      </span>
+    </mat-cell>
+  </ng-container>
+
+
+  <ng-container matColumnDef="Thumbnail">
+    <mat-header-cell *matHeaderCellDef>Thumbnail</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <img *ngIf="element.volumeInfo?.imageLinks?.smallThumbnail" [width]="thumbnailWidth" [height]="thumbnailHeight" alt="book thumbnail" [src]=" element.volumeInfo?.imageLinks?.smallThumbnail">
+    </mat-cell>
+  </ng-container>
+
+
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row (click)="openExpandedInfoDialog(row)" *matRowDef="let row; columns: displayedColumns" class="table-row clickable-row no-outline-btn"></mat-row>
+</mat-table>
+
+<mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10]"></mat-paginator>
+
+

@@ -1,0 +1,23 @@
+<div class="app-container">
+  <mat-toolbar>
+    <div>
+      <label class="logo" (click)="this.navigateToHome()"> Search Books </label>
+    </div>
+    <div class="border">
+      Welcome, {{userName | titlecase}}
+    </div>
+    <div>
+      <button color="primary" class="navigate-btn" matTooltip="{{navIcon === 'favorite' ? 'Go to Favorites' : 'Go back Home'}}" (click)="navIcon === 'favorite' ? this.navigateToFavorite() : this.navigateToHome() " mat-icon-button> <mat-icon> {{this.navIcon }}</mat-icon></button>
+
+    </div>
+
+  </mat-toolbar>
+
+  <div class="main-app-container">
+  <router-outlet></router-outlet>
+  </div>
+
+  <div class="copyright">
+    <label class="copyright-text light-txt"> {{ copyright }}</label>
+  </div>
+</div>

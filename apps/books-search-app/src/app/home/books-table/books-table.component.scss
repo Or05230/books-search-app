@@ -1,0 +1,14 @@
+@import './libs/themes/table';
+@import './libs/themes/common-theme';
+@import './libs/themes/global-styles';
+
+@include books-search-app-table;
+
+
+
+.clickable-row {
+  cursor: pointer;
+}
+
+
+

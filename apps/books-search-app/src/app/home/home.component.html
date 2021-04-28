@@ -1,0 +1,20 @@
+
+
+<mat-card class="table-card">
+  <mat-card-title class="table-title">
+    <div class="form-title-text">
+      <span>Search a book</span>
+    </div>
+  </mat-card-title>
+
+  <hr class="form-hr app-hr" />
+
+  <mat-card-content>
+    <div class="main-container">
+      <div class="search-and-filter">
+        <books-search-app-search (search)="onSearchEvent($event)" [placeholder]="placeholder"></books-search-app-search>
+      </div>
+      <books-search-app-table [events]="filter$?.asObservable()"></books-search-app-table>
+    </div>
+  </mat-card-content>
+</mat-card>
