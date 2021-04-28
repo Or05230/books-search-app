@@ -18,7 +18,7 @@ export class GoogleBooksService {
   constructor(private httpClient : HttpClient) {
   }
 
-  getBooksByName(bookName : string, maxResults: string, startIndex: string) : Observable<any>{ // TODO CHANGE TO MODEL
+  getBooksByName(bookName : string, maxResults: string, startIndex: string) : Observable<any>{
     return this.httpClient.get<any>(
       BOOK_BY_NAME_URL + `?q=${bookName}`,
       { params: new HttpParams()
