@@ -3,6 +3,8 @@ import { NavigationEnd, Router } from '@angular/router';
 
 import { OverlaySpinner } from '../overlay-spinner/overlay-spinner';
 import { UsersEnum } from '../../../../../../libs/models/users.enum';
+import { LoggerService } from '../../../../../../libs/services';
+import { environment } from '../../../environments/environment.prod';
 
 @Component({
   selector: 'books-search-app-base-template',
@@ -14,10 +16,11 @@ export class BaseTemplateComponent implements OnInit {
   userName: string;
   navIcon = 'favorite'
 
-  constructor(private overlaySpinner: OverlaySpinner, private router: Router) {
+  constructor(private overlaySpinner: OverlaySpinner, private router: Router, private loggerService: LoggerService) {
   }
 
   ngOnInit() {
+    this.loggerService.setLoggerConfig(environment.loggerConfig)
     this.getUsername();
     this.router.events.subscribe( (url : NavigationEnd )=> {
       this.setPageIcon(url.url);

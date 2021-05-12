@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 
@@ -21,6 +21,8 @@ import { LoginComponent } from './core/login/login.component';
 import { LoginModule } from './core/login/login.module';
 import { FavoritesModule } from './core/favorites/favorites.module';
 import { FavoritesComponent } from './core/favorites/favorites.component';
+import { InterceptorService } from './services/auth/interceptor.service';
+import { LoggerServiceModule } from '../../../../libs/services';
 
 
 @NgModule({
@@ -30,6 +32,7 @@ import { FavoritesComponent } from './core/favorites/favorites.component';
     AuthenticationModule,
     ErrorPageModule,
     HomeModule,
+    LoggerServiceModule,
     FavoritesModule,
     LoginModule,
     RouterModule.forRoot(
@@ -51,7 +54,12 @@ import { FavoritesComponent } from './core/favorites/favorites.component';
   bootstrap: [AppComponent],
   exports: [
   ],
-  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-AU' }]
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-AU' },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true,
+    },]
 })
 export class AppModule {}
 
